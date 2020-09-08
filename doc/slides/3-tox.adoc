@@ -94,7 +94,7 @@ python setup.py sdist
 ----
 black --diff --color --check <path to for format> # check if formatting is ok
 black 
----
+----
 
 
 === pylint
