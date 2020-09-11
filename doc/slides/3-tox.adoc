@@ -4,28 +4,28 @@
 
 "tox is a generic virtualenv management and test command line tool ..."
 
-
 === use case
-
 
 "checking that your package installs correctly with different Python versions and interpreters ..."
 
-
 === use case
 
-"running your tests in each of the environments, configuring your test tool of choice* ..."
-
-* using pytest
-
+"running your tests in each of the environments, configuring your test tool of choice ..."
 
 === use case
 
 pycharm support
 
-
 == goal of tox
 
 "tox aims to automate and standardize testing in Python. ..."
+
+== how to use it?
+
+[source]
+----
+tox
+----
 
 == tox.ini
 
@@ -59,8 +59,6 @@ commands =
 
 == flow
 
-it goes through three phases
-
 image::https://tox.readthedocs.io/en/latest/_images/tox_flow.png[tox flow]
 
 === configuration
@@ -70,7 +68,7 @@ image::https://tox.readthedocs.io/en/latest/_images/tox_flow.png[tox flow]
 
 === packaging (optional)
 
-* creates source distribution of current package 
+creates source distribution of current package 
 
 [source,bash]
 ----
@@ -79,8 +77,32 @@ python setup.py sdist
 
 === environment
 
-* create environment for every listed in the ini file
-* auto reacreation if changes detected
+* create environment for each one listed in the ini file
+* auto recreation if changes detected
 * `-r/--recreate` to force recreation
 * install dependencies in `deps` section
 * run `commands`
+
+
+== integrations
+
+=== black
+
+"uncompromising python formatter"
+
+[source]
+----
+black --diff --color --check <path to for format> # check if formatting is ok
+black 
+---
+
+
+=== pylint
+
+linting and static analysis
+
+[source]
+----
+pylint <path to format>
+----
+

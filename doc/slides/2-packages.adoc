@@ -47,6 +47,7 @@
 setup(name='Distutils',
       version='1.0',
       packages=['packagename'],
+      install_requires=['requests'],
      )
 ----
 
