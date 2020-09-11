@@ -1,0 +1,63 @@
+= packages
+
+== glossary
+
+=== module
+
+"... the input for the interpreter ..."
+
+=== package
+
+"Packages are a way of structuring Python’s module namespace by using dotted module names"
+
+== what is it?
+
+* python modules put together into one directory
+* available to user through import
+
+== why using it?
+
+* code reuse
+* logicaly structure your code
+* control the published interface
+
+== how to make package
+
+=== __init__.py
+
+* place that in directory to make it python package
+* it can be empty
+* it can run the code
+
+== __main__.py 
+
+* when package is run in the top level scope, code from this file is going to be executed
+
+=== __all__
+
+* decide what gets imported with command from . import *
+
+== how to build package
+
+=== setup.py
+
+[source, python]
+----
+# very simple
+setup(name='Distutils',
+      version='1.0',
+      packages=['packagename'],
+     )
+----
+
+=== building
+
+[source, bash]
+----
+cd package-dir
+python setup.py sdist # building package
+python setup install # install package
+----
+
+
+

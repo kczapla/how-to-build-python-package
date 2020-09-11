@@ -1,0 +1,29 @@
+= introduction
+
+== what is it about?
+
+* virtual env
+    * what is it
+    * why using it
+    * how to use it
+    * requirements.txt
+* python module
+    * __init__.py files
+        * what are they
+        * why are they
+        * show how they work
+    * __main__.py file
+        * what is it
+        * why is it
+        * run python -m
+* setup.py
+    * what is it
+    * how to write such
+    * write such file
+    * install such package to local virtual env
+    * try to import package from antother dummy project
+* pylint
+* pytest
+* black
+* tox
+* jenkins

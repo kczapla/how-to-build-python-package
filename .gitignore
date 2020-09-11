@@ -1,0 +1,7 @@
+*swp
+*html
+*pyc
+**/.tox
+**/dist
+**/__pycache__
+MANIFEST

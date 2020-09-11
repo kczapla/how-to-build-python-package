@@ -1,0 +1,46 @@
+= virtual env
+
+== what is it?
+
+"a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."
+
+== why using it?
+
+* run each application within dedicated python installation within installed dependencies
+* no clashes between apps' dependencies
+
+== how to create virtual env?
+
+[source, bash]
+----
+python3 -m pip install virtualenv # ensure venv is installed
+python3 -m venv tutorial-venv
+source tutorial-env/bin/activate
+pip list # clean installation
+----
+
+== use case
+
+=== What I want to achieve?
+
+* every developer in team useses the same environment
+* use the same pacakges' versions across different virtual envs
+* track dependencies versions in version control system
+
+=== What are possible ways of achieving that?
+
+* keep a list of dependencies on a docspace
+* install dependencies onto docker image 
+
+=== What is "the python way"?
+
+[source, bash]
+----
+python3 -m pip freeze > requirements.txt
+python3 -m venv tutorial-venv2
+source tutorial-env2/bin/activate
+pip install -r requirements.txt
+pip list # verify that packages are installed
+----
+
+

@@ -1,0 +1,14 @@
+[tox]
+envlist = py{27,37}-unit-tests,py37-format-check
+
+[testenv:py{27,37}-unit-tests]
+deps = pytest
+commands = pytest
+
+[testenv:py37-format-check]
+deps = black
+commands = black --diff --color --check setup.py tests/ mypackage/
+
+[testenv:py37-pylint]
+deps = pylint
+commands = pylint mypackage/ tests/

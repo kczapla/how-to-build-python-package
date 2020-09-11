@@ -1,0 +1,86 @@
+= tox
+
+== what is it?
+
+"tox is a generic virtualenv management and test command line tool ..."
+
+
+=== use case
+
+
+"checking that your package installs correctly with different Python versions and interpreters ..."
+
+
+=== use case
+
+"running your tests in each of the environments, configuring your test tool of choice* ..."
+
+* using pytest
+
+
+=== use case
+
+pycharm support
+
+
+== goal of tox
+
+"tox aims to automate and standardize testing in Python. ..."
+
+== tox.ini
+
+* basic information about project
+* basic information about test environments
+* place it in the same localization as `setup.py`
+
+=== basic ini file
+
+[source]
+----
+[tox]
+envlist = py27,py36
+
+[testenv]
+deps = pytest
+commands =
+    pytest
+----
+
+=== tox section
+
+* global settings
+* `envlist` - list of environments on which tox is operating
+
+=== testenv section
+
+* test environment
+* `deps` - env dependencies, installed to environment
+* `commands` - commands to be called for testing
+
+== flow
+
+it goes through three phases
+
+image::https://tox.readthedocs.io/en/latest/_images/tox_flow.png[tox flow]
+
+=== configuration
+
+* loads tox.ini
+* merges it with command line args and env variables
+
+=== packaging (optional)
+
+* creates source distribution of current package 
+
+[source,bash]
+----
+python setup.py sdist
+----
+
+=== environment
+
+* create environment for every listed in the ini file
+* auto reacreation if changes detected
+* `-r/--recreate` to force recreation
+* install dependencies in `deps` section
+* run `commands`
